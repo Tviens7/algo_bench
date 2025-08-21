@@ -1,7 +1,10 @@
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <random>
 #include <vector>
+
+#include "countsort.h"
 
 //uses mt19937 to generate arraySize of random numbers between min and max
 std::vector<int> randomGenerator(int arraySize, int min, int max)
@@ -10,11 +13,10 @@ std::vector<int> randomGenerator(int arraySize, int min, int max)
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<> dis(min, max);
 
-	std::vector<int> randomNums;
+	std::vector<int> randomNums(arraySize);
 
 	for (int i = 0; i < arraySize; ++i) {
-		int randomNum = dis(gen);
-		randomNums.emplace_back(randomNum);
+		randomNums[i] = dis(gen);
 	}
 
 	return randomNums;
@@ -41,18 +43,18 @@ int main()
 
 	std::vector<int> testingNumbers = randomGenerator(testingSize, minNum, maxNum);
 
-	for (int num : testingNumbers) {
-		std::cout << num << ' ';
-	}
+	std::vector<int> data1 = testingNumbers;
 
-	std::cout << '\n';
-	std::cout << std::endl;
+	//countsort call
+	auto start = std::chrono::high_resolution_clock::now();
 
-	std::sort(testingNumbers.begin(), testingNumbers.end());
+	countSort(data1);
 
-	for (int num : testingNumbers) {
-		std::cout << num << ' ';
-	}
+	auto end = std::chrono::high_resolution_clock::now();
+
+	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+	std::cout << duration.count();
 
 	return 0;
 }
