@@ -129,6 +129,7 @@
     <ClCompile Include="quicksort.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bubblesort.h" />
     <ClInclude Include="countsort.h" />
     <ClInclude Include="quicksort.h" />
   </ItemGroup>

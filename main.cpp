@@ -4,6 +4,7 @@
 #include <random>
 #include <vector>
 
+#include "bubblesort.h"
 #include "countsort.h"
 #include "quicksort.h"
 
@@ -75,6 +76,26 @@ int main()
 
 		std::cout << duration.count();
 	}
+
+	std::cout << std::endl;
+
+	//bubblesort call
+	if (testingSize <= 10000) {
+		std::vector<int> data = testingNumbers;
+
+		auto start = std::chrono::high_resolution_clock::now();
+
+		bubbleSort(data);
+
+		auto end = std::chrono::high_resolution_clock::now();
+
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+		std::cout << duration.count();
+	} else {std::cout << "Bubblesort not run to prevent lag"; }
+	
+	std::cout << std::endl;
+
 
 
 	return 0;
