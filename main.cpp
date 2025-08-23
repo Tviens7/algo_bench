@@ -6,6 +6,7 @@
 
 #include "bubblesort.h"
 #include "countsort.h"
+#include "heapsort.h"
 #include "quicksort.h"
 
 //uses mt19937 to generate arraySize of random numbers between min and max
@@ -57,7 +58,7 @@ int main()
 
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
-		std::cout << duration.count();
+		std::cout << "Countsort: " << duration.count();
 	}
 
 	std::cout << std::endl;
@@ -74,7 +75,7 @@ int main()
 
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
-		std::cout << duration.count();
+		std::cout << "Quicksort: " << duration.count();
 	}
 
 	std::cout << std::endl;
@@ -91,12 +92,25 @@ int main()
 
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
-		std::cout << duration.count();
+		std::cout << "Bubblesort: " << duration.count();
 	} else {std::cout << "Bubblesort not run to prevent lag"; }
 	
 	std::cout << std::endl;
 
+	//heapsort call
+	{
+		std::vector<int> data = testingNumbers;
 
+		auto start = std::chrono::high_resolution_clock::now();
+
+		heapSort(data);
+
+		auto end = std::chrono::high_resolution_clock::now();
+
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+		std::cout << "Heapsort: " << duration.count();
+	}
 
 	return 0;
 }
