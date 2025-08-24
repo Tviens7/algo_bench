@@ -8,6 +8,7 @@
 #include "countsort.h"
 #include "heapsort.h"
 #include "quicksort.h"
+#include "radixsort.h"
 
 //uses mt19937 to generate arraySize of random numbers between min and max
 std::vector<int> randomGenerator(int arraySize, int min, int max)
@@ -110,6 +111,23 @@ int main()
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
 		std::cout << "Heapsort: " << duration.count();
+	}
+
+	std::cout << std::endl;
+
+	//radixsort call
+	{
+		std::vector<int> data = testingNumbers;
+
+		auto start = std::chrono::high_resolution_clock::now();
+
+		radixSort(data);
+
+		auto end = std::chrono::high_resolution_clock::now();
+
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+		std::cout << "Radixsort: " << duration.count();
 	}
 
 	return 0;

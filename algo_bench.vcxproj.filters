@@ -30,6 +30,9 @@
     <ClCompile Include="heapsort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="radixsort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="countsort.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="heapsort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="radixsort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

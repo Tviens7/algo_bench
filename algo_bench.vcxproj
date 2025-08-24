@@ -128,12 +128,14 @@
     <ClCompile Include="heapsort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="quicksort.cpp" />
+    <ClCompile Include="radixsort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bubblesort.h" />
     <ClInclude Include="countsort.h" />
     <ClInclude Include="heapsort.h" />
     <ClInclude Include="quicksort.h" />
+    <ClInclude Include="radixsort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
