@@ -7,6 +7,7 @@
 #include "bubblesort.h"
 #include "countsort.h"
 #include "heapsort.h"
+#include "mergesort.h"
 #include "quicksort.h"
 #include "radixsort.h"
 
@@ -128,6 +129,23 @@ int main()
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
 		std::cout << "Radixsort: " << duration.count();
+	}
+
+	std::cout << std::endl;
+
+	//mergesort call
+	{
+		std::vector<int> data = testingNumbers;
+
+		auto start = std::chrono::high_resolution_clock::now();
+
+		mergeSort(data, 0, data.size() - 1);
+
+		auto end = std::chrono::high_resolution_clock::now();
+
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+		std::cout << "Mergesort: " << duration.count();
 	}
 
 	return 0;

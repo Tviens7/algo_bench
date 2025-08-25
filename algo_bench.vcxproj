@@ -127,6 +127,7 @@
     <ClCompile Include="countsort.cpp" />
     <ClCompile Include="heapsort.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mergesort.cpp" />
     <ClCompile Include="quicksort.cpp" />
     <ClCompile Include="radixsort.cpp" />
   </ItemGroup>
@@ -134,6 +135,7 @@
     <ClInclude Include="bubblesort.h" />
     <ClInclude Include="countsort.h" />
     <ClInclude Include="heapsort.h" />
+    <ClInclude Include="mergesort.h" />
     <ClInclude Include="quicksort.h" />
     <ClInclude Include="radixsort.h" />
   </ItemGroup>
